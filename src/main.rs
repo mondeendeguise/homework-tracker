@@ -1,5 +1,5 @@
-use time::PrimitiveDateTime;
 use time::macros::datetime;
+use time::PrimitiveDateTime;
 use url::{ Url, ParseError };
 
 #[derive(Debug)]
@@ -11,9 +11,10 @@ struct Task {
     points: Option<u32>,
     date_due: Option<PrimitiveDateTime>,
     date_done: Option<PrimitiveDateTime>,
-    priority: f64,
-    completed: bool,
-    closed: bool,
+    // priority: f64,
+    // late: bool,
+    // completed: bool,
+    // closed: bool,
 }
 
 impl Task {
@@ -34,10 +35,23 @@ impl Task {
             points,
             date_due,
             date_done,
-            priority: 0.0,
-            completed: false,
-            closed: false,
+            // priority: 0.0,
+            // late: false,
+            // completed: false,
+            // closed: false,
         }
+    }
+
+    fn status() -> [bool; 3] {
+        // let current_time = std::time::SystemTime::now();
+        // I'm very frustrated as I cannot figure out getting
+        // the current date & time without needing to import
+        // another got damn crate >:(
+        return [false, false, false];
+    }
+
+    fn priority() -> f64 {
+        todo!();
     }
 }
 
