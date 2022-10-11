@@ -1,3 +1,4 @@
+use std::time::{ SystemTime, UNIX_EPOCH };
 use time::macros::datetime;
 use time::PrimitiveDateTime;
 use url::{ Url, ParseError };
@@ -47,7 +48,6 @@ impl Task {
         // I'm very frustrated as I cannot figure out getting
         // the current date & time without needing to import
         // another got damn crate >:(
-        return [false, false, false];
     }
 
     fn priority() -> f64 {
