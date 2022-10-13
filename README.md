@@ -1,6 +1,14 @@
 # To-do list app made in rust
 
-### Basically so I can customize my to-do list app
+### Run Database
+
+```sh
+# Start PostgreSQL
+docker run --rm -p 5432:5432 -e "POSTGRESQL_PASSWORD=postgres" --name pg postgres:14
+
+# Start psql terminal
+docker exec -it -u postgres pg psql
+```
 
 #### Ideas
 
@@ -21,3 +29,4 @@
 - [ ] track class priority
 - [ ] UI stuff
 - [ ] finish this to-do section (maybe make this list in the app as an example)
+- [ ] postgres integration

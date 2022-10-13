@@ -1,17 +1,18 @@
-use std::time::{ SystemTime, UNIX_EPOCH };
-use time::macros::datetime;
+mod model;
+
 use time::PrimitiveDateTime;
+use time::macros::datetime;
 use url::{ Url, ParseError };
 
 #[derive(Debug)]
-struct Task {
+pub struct Task {
     id: usize,
-    title: String,
-    description: Option<String>,
-    url: Option<Result<Url, ParseError>>,
-    points: Option<u32>,
-    date_due: Option<PrimitiveDateTime>,
-    date_done: Option<PrimitiveDateTime>,
+    pub title: String,
+    pub description: Option<String>,
+    pub url: Option<Result<Url, ParseError>>,
+    pub points: Option<u32>,
+    pub date_due: Option<PrimitiveDateTime>,
+    pub date_done: Option<PrimitiveDateTime>,
     // priority: f64,
     // late: bool,
     // completed: bool,
@@ -19,7 +20,7 @@ struct Task {
 }
 
 impl Task {
-    fn new(
+    pub fn new(
         id: usize,
         title: String,
         description: Option<String>,
@@ -43,20 +44,22 @@ impl Task {
         }
     }
 
-    fn status() -> [bool; 3] {
+    pub fn status() -> [bool; 3] {
         // let current_time = std::time::SystemTime::now();
         // I'm very frustrated as I cannot figure out getting
         // the current date & time without needing to import
         // another got damn crate >:(
+        todo!();
     }
 
-    fn priority() -> f64 {
+    pub fn priority() -> f64 {
         todo!();
     }
 }
 
 fn main() {
     let mut tasks = Vec::new();
+
     tasks.push(
         Task::new(
             tasks.len(),
@@ -68,16 +71,20 @@ fn main() {
             Some(datetime!(2023-04-30 23:59)),
         )
     );
+
     tasks.push(
         Task::new(
             tasks.len(),
             String::from("Do the laundry"),
             None,
-            Some(Url::parse("https://www.pornhub.com")),
+            Some(Url::parse("https://www.github.com/mondeendeguise/homework-tracker/")),
             None,
             None,
             None,
         )
     );
+
+    println!("{:#?}", tasks);
+    tasks[0].title = String::from("Sexy sex");
     println!("{:#?}", tasks);
 }
