@@ -3,13 +3,13 @@ use url::{ParseError, Url};
 
 #[derive(Debug)]
 pub struct Grade {
-    pub points: u32,
-    pub score: u32,
+    pub received: u32,
+    pub possible: u32,
 }
 
 impl Grade {
-    pub fn grade(&self) -> f64 {
-        f64::from(self.score) / f64::from(self.points)
+    pub fn score(&self) -> f64 {
+        f64::from(self.received) / f64::from(self.possible)
     }
 }
 
