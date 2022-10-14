@@ -1,11 +1,15 @@
+use time::PrimitiveDateTime;
+use url::{ParseError, Url};
+
+#[derive(Debug)]
 pub struct Grade {
     pub points: u32,
     pub score: u32,
 }
 
 impl Grade {
-    pub fn grade() -> f64 {
-        (self.score / self.points)
+    pub fn grade(&self) -> f64 {
+        f64::from(self.score) / f64::from(self.points)
     }
 }
 
@@ -20,15 +24,22 @@ pub struct Task {
     pub date_done: Option<PrimitiveDateTime>,
 }
 
-
 impl Task {
-    pub fn new(id: usize, title: String, description: Option<String>, url: Option<Result<Url, ParseError>>, grade: Option<Grade>, date_due: Option<PrimitiveDateTime>, date_done: Option<PrimitiveDateTime>) -> Self {
+    pub fn new(
+        id: usize,
+        title: String,
+        description: Option<String>,
+        url: Option<Result<Url, ParseError>>,
+        grade: Option<Grade>,
+        date_due: Option<PrimitiveDateTime>,
+        date_done: Option<PrimitiveDateTime>,
+    ) -> Self {
         Self {
             id,
             title,
             description,
             url,
-            points,
+            grade,
             date_due,
             date_done,
         }
@@ -52,20 +63,28 @@ pub struct Group {
 }
 
 impl Group {
-    pub fn new(id: usize, title: String, description: Option<String>, url: Option<Result<Url, ParseError>>) -> Self {
+    pub fn new(
+        id: usize,
+        title: String,
+        description: Option<String>,
+        url: Option<Result<Url, ParseError>>,
+    ) -> Self {
         Self {
             id,
             title,
             description,
             url,
-            Vec::new(),
+            items: Vec::new(),
         }
     }
 
     pub fn total_points() -> u32 {
-        for i in 
+        todo!();
+        // for i in
     }
+
     pub fn priority(id: usize) -> f64 {
         todo!()
     }
 }
+
