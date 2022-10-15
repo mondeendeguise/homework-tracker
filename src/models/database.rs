@@ -8,6 +8,13 @@ pub struct Grade {
 }
 
 impl Grade {
+    pub fn new(possible: u32) -> Self {
+        Self {
+            received: 0,
+            possible,
+        }
+    }
+
     pub fn score(&self) -> f64 {
         f64::from(self.received) / f64::from(self.possible)
     }
@@ -54,12 +61,13 @@ impl Task {
     }
 }
 
+#[derive(Debug)]
 pub struct Group {
     pub id: usize,
     pub title: String,
     pub description: Option<String>,
     pub url: Option<Result<Url, ParseError>>,
-    pub items: Vec<Task>,
+    pub tasks: Vec<Task>,
 }
 
 impl Group {
@@ -74,7 +82,7 @@ impl Group {
             title,
             description,
             url,
-            items: Vec::new(),
+            tasks: Vec::new(),
         }
     }
 
@@ -88,3 +96,21 @@ impl Group {
     }
 }
 
+#[derive(Debug)]
+pub struct User {
+    pub id: usize,
+    pub name: String,
+    pub email: String,
+    pub password: String,
+    pub groups: Vec<Group>,
+}
+
+impl User {
+    pub fn new() -> Self {
+        todo!();
+    }
+
+    pub fn authenticate(email: String, password: String) {
+        todo!();
+    }
+}
