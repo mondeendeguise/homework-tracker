@@ -22,7 +22,7 @@ docker exec -it -u postgres pg psql
 #### To-Do
 
 - [x] figure out rust structs and making instances of them
-- [ ] make task groups (I'm thinking of calling them "rooms")
+- [x] make task groups (I'm thinking of calling them "rooms")
 - [ ] make the functions for interfacing and indexing with objects
 - [ ] make function to index objects prettily
 - [ ] track assignment priority

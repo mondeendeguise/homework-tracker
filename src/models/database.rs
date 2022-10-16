@@ -2,6 +2,7 @@ use time::PrimitiveDateTime;
 use url::{ParseError, Url};
 
 #[derive(Debug)]
+// Grade {{{
 pub struct Grade {
     pub received: u32,
     pub possible: u32,
@@ -19,8 +20,10 @@ impl Grade {
         f64::from(self.received) / f64::from(self.possible)
     }
 }
+// }}}
 
 #[derive(Debug)]
+// Task {{{
 pub struct Task {
     pub id: usize,
     pub title: String,
@@ -29,6 +32,7 @@ pub struct Task {
     pub grade: Option<Grade>,
     pub date_due: Option<PrimitiveDateTime>,
     pub date_done: Option<PrimitiveDateTime>,
+    pub is_complete: bool,
 }
 
 impl Task {
@@ -49,6 +53,7 @@ impl Task {
             grade,
             date_due,
             date_done,
+            is_complete: false,
         }
     }
 
@@ -60,8 +65,10 @@ impl Task {
         todo!();
     }
 }
+// }}}
 
 #[derive(Debug)]
+// Group {{{
 pub struct Group {
     pub id: usize,
     pub title: String,
@@ -95,22 +102,32 @@ impl Group {
         todo!()
     }
 }
+// }}}
 
 #[derive(Debug)]
+// User {{{
 pub struct User {
     pub id: usize,
     pub name: String,
     pub email: String,
+    // TODO: password hashing, authentication
     pub password: String,
     pub groups: Vec<Group>,
 }
 
 impl User {
-    pub fn new() -> Self {
-        todo!();
+    pub fn new(id: usize, name: String, email: String, password: String) -> Self {
+        Self {
+            id,
+            name,
+            email,
+            password,
+            groups: Vec::new(),
+        }
     }
 
     pub fn authenticate(email: String, password: String) {
         todo!();
     }
 }
+// }}}
