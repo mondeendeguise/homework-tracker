@@ -93,9 +93,12 @@ impl Group {
         }
     }
 
-    pub fn total_points() -> u32 {
-        todo!();
-        // for i in
+    pub fn total_points(&self) -> u32 {
+        let mut total: u32 = 0;
+        for task in &self.tasks {
+            total += task.grade.as_ref().unwrap().received;
+        }
+        return total;
     }
 
     pub fn priority(id: usize) -> f64 {
