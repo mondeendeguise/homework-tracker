@@ -1,3 +1,5 @@
+#![allow(unused_variables)]
+
 use time::PrimitiveDateTime;
 use url::{ParseError, Url};
 
@@ -101,6 +103,7 @@ impl Group {
         return total;
     }
 
+    // TODO: priority function based on other grades & impact
     pub fn priority(id: usize) -> f64 {
         todo!()
     }
@@ -129,6 +132,7 @@ impl User {
         }
     }
 
+    // TODO: user authentication
     pub fn authenticate(email: String, password: String) {
         todo!();
     }
