@@ -1,6 +1,14 @@
 # To-do list app made in rust
 
-### Run Database
+#### Setup
+
+Before `server` can be ran, a `.env` file must be created in the `server` directory.<br>
+
+The following environment variables must also be set:<br>
+
+- `DATABASE_URL`
+
+#### Run Database
 
 ```sh
 # Start PostgreSQL
@@ -22,11 +30,13 @@ docker exec -it -u postgres pg psql
 #### To-Do
 
 - [x] figure out rust structs and making instances of them
-- [x] make task groups (I'm thinking of calling them "rooms")
+- [x] make task groups
 - [ ] make the functions for interfacing and indexing with objects
 - [ ] make function to index objects prettily
 - [ ] track assignment priority
 - [ ] track class priority
-- [ ] UI stuff
-- [ ] finish this to-do section (maybe make this list in the app as an example)
 - [ ] postgres integration
+- [ ] client developement
+- [ ] client-server integration
+- [ ] full stack deployment
+- [ ] finish this to-do section (maybe make this list in the app as an example)
