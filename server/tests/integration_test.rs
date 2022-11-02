@@ -1,4 +1,5 @@
-use crate::models::database::{Grade, Task};
+use homework_tracker::models::database::{Grade, Task};
+
 use time::macros::datetime;
 use url::Url;
 

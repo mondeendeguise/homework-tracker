@@ -1,0 +1,12 @@
+[package]
+name = "homework-tracker"
+version = "0.1.0"
+authors = ["Ash Bullock <mondeendeguise@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+common = { path = "../common"}
+
+time = { version = "0.3", features = ["macros"] }
+serde = { version = "1.0", features = ["derive"] }
+url = { version = "2.3", features = ["serde"] }
