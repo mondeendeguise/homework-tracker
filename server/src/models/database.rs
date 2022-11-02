@@ -4,7 +4,7 @@ use time::PrimitiveDateTime;
 use url::{ParseError, Url};
 
 #[derive(Debug)]
-// Grade {{{
+// {{{ Grade 
 pub struct Grade {
     pub received: u32,
     pub possible: u32,
@@ -22,10 +22,10 @@ impl Grade {
         f64::from(self.received) / f64::from(self.possible)
     }
 }
-// }}}
+// }}} Grade
 
 #[derive(Debug)]
-// Task {{{
+// {{{ Task
 pub struct Task {
     pub id: usize,
     pub title: String,
@@ -67,10 +67,10 @@ impl Task {
         todo!();
     }
 }
-// }}}
+// }}} Task
 
 #[derive(Debug)]
-// Group {{{
+// {{{ Group 
 pub struct Group {
     pub id: usize,
     pub title: String,
@@ -108,10 +108,10 @@ impl Group {
         todo!()
     }
 }
-// }}}
+// }}} Group
 
 #[derive(Debug)]
-// User {{{
+// {{{ User 
 pub struct User {
     pub id: usize,
     pub name: String,
@@ -137,4 +137,20 @@ impl User {
         todo!();
     }
 }
-// }}}
+// }}} User
+
+// {{{ Tests
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn grade_score() {
+        let score = (Grade {
+            received: 75,
+            possible: 100,
+        }).score();
+        assert_eq!(score, 0.75);
+    }
+}
+// }}} Tests
