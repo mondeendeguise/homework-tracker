@@ -3,8 +3,8 @@
 use time::PrimitiveDateTime;
 use url::{ParseError, Url};
 
-#[derive(Debug)]
 // {{{ Grade 
+#[derive(Debug)]
 pub struct Grade {
     pub received: u32,
     pub possible: u32,
@@ -24,8 +24,8 @@ impl Grade {
 }
 // }}} Grade
 
-#[derive(Debug)]
 // {{{ Task
+#[derive(Debug)]
 pub struct Task {
     pub id: usize,
     pub title: String,
@@ -69,8 +69,8 @@ impl Task {
 }
 // }}} Task
 
-#[derive(Debug)]
 // {{{ Group 
+#[derive(Debug)]
 pub struct Group {
     pub id: usize,
     pub title: String,
@@ -110,8 +110,8 @@ impl Group {
 }
 // }}} Group
 
-#[derive(Debug)]
 // {{{ User 
+#[derive(Debug)]
 pub struct User {
     pub id: usize,
     pub name: String,
