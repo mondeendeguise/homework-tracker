@@ -1,5 +1,5 @@
 [package]
-name = "homework-tracker"
+name ="homework-app-backend"
 version = "0.1.0"
 authors = ["Ash Bullock <mondeendeguise@gmail.com>"]
 edition = "2021"

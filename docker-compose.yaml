@@ -1,6 +1,6 @@
 version: "3"
 services:
-  homework-tracker:
+  app:
     build: ./docker/app/Dockerfile
     depends_on:
       - db
@@ -9,5 +9,3 @@ services:
 
   db:
     build: ./docker/db/Dockerfile
-    volumes:
-      - ./docker/db:/bitnami/mariadb

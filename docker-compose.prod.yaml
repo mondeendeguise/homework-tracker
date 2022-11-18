@@ -1,0 +1,7 @@
+version: "3"
+services:
+  app:
+
+  db:
+    volumes:
+      - ./docker/db:/bitnami/mariadb

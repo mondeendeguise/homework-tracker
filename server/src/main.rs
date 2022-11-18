@@ -1,3 +1,4 @@
-extern crate homework_tracker;
+pub mod models;
+pub mod schema;
 
 fn main() {}
