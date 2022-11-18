@@ -2,21 +2,9 @@
 
 #### Setup
 
-Before `server` can be ran, a `.env` file must be created in the `server` directory.<br>
-
-The following environment variables must also be set:<br>
+The following environment variables must be set:
 
 - `DATABASE_URL`
-
-#### Run Database
-
-```sh
-# Start PostgreSQL
-docker run --rm -p 5432:5432 -e "POSTGRES_PASSWORD=postgres" --name pg postgres:14
-
-# Start psql terminal
-docker exec -it -u postgres pg psql
-```
 
 #### Ideas
 
@@ -31,11 +19,11 @@ docker exec -it -u postgres pg psql
 
 - [x] figure out rust structs and making instances of them
 - [x] make task groups
+- [ ] figure out database stuff
 - [ ] make the functions for interfacing and indexing with objects
 - [ ] make function to index objects prettily
 - [ ] track assignment priority
 - [ ] track class priority
-- [ ] postgres integration
 - [ ] client developement
 - [ ] client-server integration
 - [ ] full stack deployment

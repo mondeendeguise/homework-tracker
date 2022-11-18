@@ -1,0 +1,13 @@
+version: "3"
+services:
+  homework-tracker:
+    build: ./docker/app/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+
+  db:
+    build: ./docker/db/Dockerfile
+    volumes:
+      - ./docker/db:/bitnami/mariadb
